@@ -1,4 +1,23 @@
 defmodule Hit414Web.Endpoint do
+  defmodule Here do
+    import Plug.Conn
+
+    def init(_opts) do
+      []
+    end
+
+    def call(conn, _opts) do
+      IO.inspect("HERE")
+
+      conn
+      |> Plug.Conn.put_resp_header("content-type", "application/json")
+      |> send_resp(200, Jason.encode!(%{msg: "You made it here"}))
+      |> halt()
+    end
+  end
+
+  use Plug.Builder
+  plug Here
   use Phoenix.Endpoint, otp_app: :hit414
 
   # The session will be stored in the cookie and signed,

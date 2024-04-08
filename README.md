@@ -1,6 +1,6 @@
 # Hit414
 
-To start your Phoenix server:
+To start your Phoenix serverz:
 
   * Setup the project with `mix setup`
   * Start Phoenix endpoint with `mix phx.server`
